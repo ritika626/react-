@@ -1,0 +1,16 @@
+redirect login-done(revise)
+custom form in contact-byMyself
+search for unmount the component -done
+tabs indexing-requirement common component pass array of obj{label:'',value:''}-done
+Pagination,digital clock -evening
+regex understanding - explain to shubham  13 pkka
+headers - passing token,Sass,Scss-today
+api implementation
+todo with redux
+
+//evening
+2- star pattern 
+github code and firebase hosting with ci/cd
+tictactoe-done
+refs
+through props in child component
