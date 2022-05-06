@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {categories,newSampleObj,nestedObj,todayArr,categoriesNames,categoriesArr} from '../../ob';
 import moment from 'moment';
 
@@ -178,11 +178,15 @@ const Shubh=()=>{
       return x
     }
     console.log('reverseArr',reverseArr(categoriesArr));
+    console.log('use memo');
 
-    
+     const test=useMemo(()=>{
+       console.log('test')
+        return 'test'
+     },[count])    
     return (
         <>
-        <h3>{count}</h3>
+        <h3>{count} {test}</h3>
         <button onClick={handleInc}>Inc</button>
         <button onClick={handleDec}>Dec</button>
         </>

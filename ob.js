@@ -306,3 +306,5 @@ export const categoriesArr=[{
 },
 ]
 
+module.exports=tags;
+
