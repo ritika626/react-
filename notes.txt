@@ -13,4 +13,5 @@ todo with redux
 github code and firebase hosting with ci/cd
 tictactoe-done
 refs
-through props in child component
+through props in child component,
+smooth moving of a vehicle on maps

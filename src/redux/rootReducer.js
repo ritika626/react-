@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import {dr,woList} from './reducer';
+import {dr,woList,todoList} from './reducer';
 
     const rootReducer = combineReducers({
         dr,
-        woList
+        woList,
+        todoList
     });
 
     export default rootReducer;

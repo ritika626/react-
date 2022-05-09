@@ -11,6 +11,8 @@ import Shubh from '../TabsContent/shubh';
 import ShubhRef from '../TabsContent/shubhRef';
 import Practice from '../../pages/practice';
 import Todo from '../../pages/Todo';
+import Form from '../../pages/CustomForm';
+import TodoRedux from '../../pages/TodoRedux';
 
 const Container = () => {
     return (
@@ -21,6 +23,8 @@ const Container = () => {
                 <Route path='/about' component={About} />
                 <Route path='/list' component={List} />
                 <Route path='/todo' component={Todo} />
+                <Route path='/todoRedux' component={TodoRedux} />
+                <Route path='/customForm' component={Form}/>
                 <Route path='/practice' component={Practice} />
                 <Route path='/woList/details/:age' component={WorkOrderListDetail}></Route>
                 <Route path='/woList' component={WorkOrderList}></Route>

@@ -17,71 +17,71 @@ const tags2 = [{
     id: 1,
     name: 'ritika',
     age: 23,
-    basic:{
-        empId:1
+    basic: {
+        empId: 1
     }
 },
 {
     id: 2,
     name: 'ritika',
     age: 24,
-    basic:{
-        empId:2
+    basic: {
+        empId: 2
     }
 },
 {
     id: 3,
     name: 'ritika',
     age: 25,
-    basic:{
-        empId:3
+    basic: {
+        empId: 3
     }
 },
 {
     id: 4,
     name: 'ritika',
     age: 26,
-    basic:{
-        empId:4
+    basic: {
+        empId: 4
     }
 },
 {
     id: 5,
     name: 'ritika',
     age: 27,
-    basic:{
-        empId:5
+    basic: {
+        empId: 5
     }
 },
 {
     id: 6,
     name: 'ritika',
     age: 28,
-    basic:{
-        empId:6
+    basic: {
+        empId: 6
     }
 }, {
     id: 7,
     name: 'ritika',
     age: 29,
-    basic:{
-        empId:7
+    basic: {
+        empId: 7
     }
 },
 {
     id: 8,
     name: 'ritika',
     age: 20,
-    basic:{
-        empId:8
+    basic: {
+        empId: 8
     }
 },
 {
     id: 9,
     name: 'ritika',
     age: 30,
-    basic:{
-        empId:9
+    basic: {
+        empId: 9
     }
 }
 ]
@@ -174,8 +174,8 @@ const usersData = {
         lastName: {
             value: 'das chanchad'
         },
-        age:{
-            value:9
+        age: {
+            value: 9
         }
     },
     2: {
@@ -244,121 +244,121 @@ const tags = [{
     id: 1,
     name: 'ritika1',
     age: 23,
-    basic:{
-        empId:1
+    basic: {
+        empId: 1
     }
 },
 {
     id: 2,
     name: 'kriitika2',
     age: 24,
-    basic:{
-        empId:2
+    basic: {
+        empId: 2
     }
 },
 {
     id: 3,
     name: 'gitika3',
     age: 25,
-    basic:{
-        empId:3
+    basic: {
+        empId: 3
     }
 },
 {
     id: 4,
     name: 'ritika4',
     age: 26,
-    basic:{
-        empId:4
+    basic: {
+        empId: 4
     }
 },
 {
     id: 5,
     name: 'nitika5',
     age: 27,
-    basic:{
-        empId:5
+    basic: {
+        empId: 5
     }
 },
 {
     id: 6,
     name: 'ritika6',
     age: 28,
-    basic:{
-        empId:6
+    basic: {
+        empId: 6
     }
 }, {
     id: 7,
     name: 'ritika7',
     age: 29,
-    basic:{
-        empId:7
+    basic: {
+        empId: 7
     }
 },
 {
     id: 8,
     name: 'ritika8',
     age: 20,
-    basic:{
-        empId:8
+    basic: {
+        empId: 8
     }
 },
 {
     id: 9,
     name: 'ritika9',
     age: 30,
-    basic:{
-        empId:9
+    basic: {
+        empId: 9
     }
 }
 ]
 
-const arr1=[{
-    name:{
-        firstName:'geeta',
-        lastName:'kapoor'
+const arr1 = [{
+    name: {
+        firstName: 'geeta',
+        lastName: 'kapoor'
     },
-    emplData:{
-        data:{
-            salary:4,
-            age:2,
-            empId:{
-                data:{
-                    id:6
+    emplData: {
+        data: {
+            salary: 4,
+            age: 2,
+            empId: {
+                data: {
+                    id: 6
                 }
             }
         }
     }
 },
 {
-    name:{
-        firstName:'seeta',
-        lastName:'kapoor'
+    name: {
+        firstName: 'seeta',
+        lastName: 'kapoor'
     },
-    emplData:{
-        data:{
-            salary:6,
-            age:9,
-            empId:{
-                data:{
-                    id:8
+    emplData: {
+        data: {
+            salary: 6,
+            age: 9,
+            empId: {
+                data: {
+                    id: 8
                 }
             }
         }
     }
 },
 {
-    name:{
-        firstName:'bhg',
-        lastName:'kapoor'
+    name: {
+        firstName: 'bhg',
+        lastName: 'kapoor'
     },
-    emplData:{
-        data:{
-            salary:10,
-            age:1,
-            empId:{
-                data:{
-                    id:7
+    emplData: {
+        data: {
+            salary: 10,
+            age: 1,
+            empId: {
+                data: {
+                    id: 7
                 }
             }
         }
@@ -424,7 +424,276 @@ console.log(nFormatter(1200))
 console.log(new Intl.NumberFormat('en-IN').format(number));
 console.log(new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(number)); */
 
-// 
-function logic1(){
-
+const previousObj = {
+    a: {
+        b: {
+            c: {
+                d: [{
+                    value: '10',
+                },
+                {
+                    value: '19',
+                },
+                {
+                    value: '12',
+                },
+                {
+                    value: '13',
+                }]
+            }
+        }
+    },
+    b: {
+        c: {
+            d: {
+                e: [{
+                    value: '15'
+                },
+                {
+                    value: '16'
+                },
+                {
+                    value: '17'
+                },
+                {
+                    value: '18'
+                }]
+            }
+        }
+    }
 }
+
+/* output ====> [{key:a},{key:b,value:[16>]}]
+function logic1(obj){
+   const empArray=[];
+   Object.keys(obj).map(i=>{
+       let err=[]
+       // console.log([i]);
+       Object.keys(obj[i])
+       .map(x=>Object.keys(obj[i][x])
+       .map(y=>Object.keys(obj[i][x][y])
+       .map(a=>{
+           obj[i][x][y][a]
+           .map(z=>{
+               if(z.value > 16){
+                  err=[...err,z.value]
+               }
+           })
+       }
+      )));
+       empArray.push({key:i,value:err})
+   })
+   console.log(empArray)
+}
+console.log(logic1(previousObj)); */
+
+const logic2Arr = [
+    {
+        id: '1',
+        name: {
+            a: [
+                {
+                    class: [1, 2, 3, 4, 5]
+                },
+                {
+                    toppers: [{
+                        name: 'shubham1',
+                        studentId: 1
+                    },
+                    {
+                        name: 'shubham2',
+                        studentId: 2
+                    },
+                    {
+                        name: 'shubham3',
+                        studentId: 3
+                    },
+                    {
+                        name: 'shubham4',
+                        studentId: 4
+                    },
+                    {
+                        name: 'shubham5',
+                        studentId: 5
+                    }
+                    ]
+                },
+                {
+                    marks: [349, 455, 333, 350, 290]
+                }
+            ]
+        }
+    },
+    {
+        id: '2',
+        name: {
+            a: [
+                {
+                    studentIds: [1, 2, 5]
+                },
+                {
+                    companyName: ['shubham1', 'shubham2', 'shubham5']
+                },
+                {
+                    code: [349, 455, 333, 350, 290]
+                },
+            ]
+        }
+    }
+]
+
+const logic3Obj = {
+    a: {
+        b: {
+            c: {
+                d: {
+                    e: {
+                        f: 'end'
+                    }
+                }
+            }
+        }
+    },
+    b: {
+        c: 'end'
+    },
+    c: {
+        d: {
+            e: {
+                f: {
+                    g: {
+                        h: ''
+                    }
+                }
+            }
+        }
+    },
+    d: {
+        e: {
+            f: {
+                g: 'end'
+            }
+        }
+    }
+}
+
+let logic4Arr = {
+    'EMP-ID_2': {
+        name: {
+            data: ["bhardwaj", "shubham"],
+        },
+        since: {
+            data: {
+                value: '2016-01-21'
+            }
+        },
+        shortName: 'pyare',
+        country: 'UAE'
+    },
+    'EMP-ID_4': {
+        name: {
+            data: ["sharma", "ritika"],
+        },
+        since: {
+            data: {
+                value: '2021-01-27'
+            }
+        },
+        shortName: 'kiko',
+        country: 'IN'
+    },
+    'EMP-ID_6': {
+        name: {
+            data: ["doe", "john"],
+        },
+        since: {
+            data: {
+                value: '2022-01-27'
+            }
+        },
+        shortName: 'bla bla',
+        country: 'US'
+    },
+}
+
+
+/*  output====>[{
+    name:'',
+    studentId:'',
+    class:'',
+    marks:'',
+    companyName:''
+}] */
+
+function logic2Arr1(arr, classId, placement) {
+    let empArr = [];
+    // arr.map(i=>{
+    classId.map((x) => {
+        if (arr[0].name.a[0].class.includes(x)) {
+            const index = arr[0].name.a[0].class.findIndex(y => y === x);
+            const student = arr[0].name.a[1].toppers[index];
+            const marks = arr[0].name.a[2].marks[index]
+            if (placement) {
+                const index1 = arr[1].name.a[0].studentIds.findIndex(a => a === student.studentId)
+                const companyName = arr[1].name.a[1].companyName[index1]
+                if (arr[1].name.a[0].studentIds.includes(student.studentId)) {
+                    empArr = [...empArr, { name: student.name, studentId: student.studentId, class: x, marks: marks, companyName: companyName }]
+                }
+            }
+            else {
+                empArr = [...empArr, { name: student.name, studentId: student.studentId, class: x, marks: marks }]
+            }
+        }
+    })
+    // });
+    console.log(empArr);
+}
+// console.log(logic2Arr1(logic2Arr,[3],true));
+
+// output ['abcdef','bc','defg'];
+// output logic4Arr====>[{
+//     id:4,(EMP_ID_4 should give the id last 4)
+//    name:'ritika sharma (shortname)', 
+//    country:'Unites Arb emirates from abbre UAE'
+// }]
+
+function logic3Obj1(obj) {
+    let empArr = [];
+    // const countryNames = [{
+    //     name: 'Unites Arb emirates',
+    //     abb: 'UAE'
+    // },
+    // {
+    //     name: 'India',
+    //     abb: 'IN'
+
+    // }, {
+    //     name: 'America',
+    //     abb: 'US'
+    // }
+    // ];
+    const countryNames={UAE:'United arab emirates',IN:'India',US:'America'}
+    Object.keys(obj)
+        .map((i, index) => {
+            // console.log(obj[i])
+            // const empId=i[7];
+            let countryNameResAbbre = '';
+            const empId = i.split('_');
+            const nameEmp = obj[i]['name']['data'];
+            const abbreCountryName = obj[i]['country'];
+            // const abbrName=countryNames.find(i=>i.abb===abbreCountryName) (if countryNames is array of objs)
+            // if(abbreCountryName==='UAE'){
+            //     countryNameResAbbre=countryNames[0]
+            // }
+            // if(abbreCountryName==='IN'){
+            //     countryNameResAbbre=countryNames[1]
+            // }
+            // if(abbreCountryName==='US'){
+            //     countryNameResAbbre=countryNames[2]
+            // }
+            // console.log(nameEmp);
+            empArr = [...empArr, { id: empId[1], name: nameEmp[1] + ' ' + nameEmp[0] + ' ' + '(' + obj[i]['shortName'] + ')', country: countryNames[abbreCountryName] }]
+        })
+      console.log(empArr)
+}
+// console.log(logic3Obj1(logic4Arr))
