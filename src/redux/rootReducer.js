@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
-import {dr,woList,todoList} from './reducer';
+import {dr,woList,todoList,backgroundChangeRedux} from './reducer';
+import { EditInputReducer } from './EditReducer';
 
     const rootReducer = combineReducers({
         dr,
         woList,
-        todoList
+        todoList,
+        backgroundChangeRedux,
+        EditInputReducer
     });
 
     export default rootReducer;

@@ -19,18 +19,18 @@ import {TodoApi} from '../api';
     return axios.get(TodoApi);
   };
 
-function* todoListSaga(){
+function* deleteTodo(id){
         try{
             const response = yield call(fetchTodo);
-            yield put(actions.getTodoListAction.received(response.data));
+            yield put(actions.deleteTodo.received(response.data,id));
         }
         catch(e){
             console.log('error',e);
         }
   }
 
-export const fetchTodoListSaga=[
-    takeLatest([TodoListReduxActionTypes.SET_TODO_LIST_REQUEST], todoListSaga)
+export const deleteTodoSaga=[
+    takeLatest([TodoListReduxActionTypes.DELETE_TODO_LIST_REQUEST], deleteTodo)
 ];
 
     

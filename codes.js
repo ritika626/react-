@@ -10,7 +10,6 @@ function crossAdd(input){
 
 console.log(crossAdd(todayArr))
 
-
 const [name,setName]=useState<String>(89) */
 
 const tags2 = [{
@@ -697,3 +696,291 @@ function logic3Obj1(obj) {
       console.log(empArr)
 }
 // console.log(logic3Obj1(logic4Arr))
+
+const logic3Arr=[[1,2,3,4,5,6,7,8],['ritika','shubham','niks','rits','carl','lala','htt','mote']]
+
+// output====>[{
+//     1:'ritika',
+//     2:'shubham',
+//     3:'',
+//     4:''
+// },{
+//     5:'',
+//     6:'',
+//     ...
+// }]
+
+function logic3Arr2(arr){
+       arr.map((i,index)=>{
+           let empArr=[];
+           let quot=i.length/2;
+            // console.log(Math.round(quot));
+            // console.log(i[quot-1])
+           i.map((y,index)=>{
+               let empObj={};
+            //    if(i.length%2===0){
+            //     empArr.push({y:'k'})
+            //  }
+           })
+        // console.log(empArr)
+    })
+}
+// console.log(logic3Arr2(logic3Arr));
+
+function logic4Arr4(arr,id,test){
+       arr.map((i,index)=>{
+           if(id.includes(i.basic.empId)){
+                i.test=test
+           }
+       })
+       console.log(arr);
+}
+// console.log(logic4Arr4(tags,[2],'test'));
+
+const logic5Obj={
+    a:10,
+    b:23,
+    c:45,
+    d:80,
+    e:20,
+    f:15
+}
+// output={odd:[],even:[]}
+function logic5Obj5(obj){
+     let empObj={}
+     Object.keys(obj)
+     .map((i,index)=>{
+         obj[i]
+         if(obj[i]%2===0){
+             if(empObj.even){
+                empObj={...empObj,even:[...empObj.even,obj[i]]}
+             }else{
+                empObj={...empObj,even:[obj[i]]}
+             }
+         }
+         else{
+            if(empObj.odd){
+                empObj={...empObj,odd:[...empObj.odd,obj[i]]}
+             }else{
+                empObj={...empObj,odd:[obj[i]]}
+             }
+            // empObj.odd=[...empObj?.['odd'],obj[i]]
+         }
+     })
+     console.log(empObj);
+}
+//console.log(logic5Obj5(logic5Obj));
+
+//output {1:'ritika1',2:'roitika2}
+function logic6Obj6(arr){
+      const empObj={};
+      arr.map((i,index)=>{
+          //empObj={...empObj,[i.id]:i.name}
+          empObj[i.id]=i.name
+      })
+      console.log(empObj);
+}
+//console.log(logic6Obj6(tags));
+
+const logic7Arr=[1,2,3,4,5,5,5,1,3]
+//output [{1:'2',5:'3'}]
+function logic7Obj7(arr,num){
+      let count=0;
+     /*  arr.map((i,index)=>{
+          console.log(arr[i]);
+          if(i===num){
+               count=count+1
+          }
+          let empObj={}
+          empObj={...empObj,}
+          arr={...empObj}
+      }) */
+      for(let i=0;i<arr.length;i++){
+         // console.log(arr[i])
+           
+      }
+     /*  console.log(count); */
+}
+
+function logic7Obj8(arr){
+    let empArr=[];
+    for(let i=0;i<arr.length;i++){
+       // console.log(arr[i]);
+       let count=0;
+       if(!empArr.some(t=>t[arr[i]])){
+        for(let y=0;y<arr.length;y++){
+            if(arr[i]===arr[y]){
+                count+=1
+            }
+        }
+        empArr=[...empArr,{[arr[i]]:count}]
+       }
+    }
+    console.log(empArr);
+}
+/* console.log(logic7Obj8(logic7Arr)); */
+const logic8Arr8=[{
+    id:1,
+    name:'shubham'
+},
+{
+    id:2,
+    name:'ritika'
+},
+{
+    id:3,
+    name:'momin'
+},
+{
+    id:4,
+    name:'kiko'
+}]
+const logic8Arr9=[{
+    id:5,
+    name:'shubham1'
+},
+{
+    id:2,
+    name:'ritika'
+},
+{
+    id:6,
+    name:'momin1'
+},
+{
+    id:7,
+    name:'kiko1'
+}]
+
+function logic8arr8Merge(arr1,arr2){
+    let empArr=[]
+     /* for(let i=0;i<arr1.length;i++){    (this is wrong made by me )
+         if(!empArr.some(k=>k.id===(arr[i].id && arr2[i].id))){
+            for(let j=0;j<arr2.length;j++){
+                if(arr1[i].id!==arr2[j].id){
+                      empArr=[...empArr,arr1[i],arr2[j]]
+                }
+            }
+         }
+     } */
+     /* for(let i=0;i<arr1.length;i++){   ( this is right one )
+            for(let j=0;j<arr2.length;j++){
+                if(!empArr.some(x=>x.id===arr1[i].id || x.id===arr2[j].id)){
+                    empArr=[...empArr,arr1[i]]
+                    if(!empArr.some(v=>v.id===arr2[j].id)){
+                        empArr=[...empArr,arr2[j]]
+                    }
+                }
+        }
+     } */
+
+     empArr=[...arr1,...arr2]
+     let cot=[];
+     for(let i=0;i<empArr.length;i++){
+            if(!cot?.some(x=>x.id===empArr[i].id)){
+                     cot=[...cot,empArr[i]]
+            }     
+     }
+     console.log(cot);
+}
+//console.log(logic8arr8Merge(logic8Arr8,logic8Arr9));
+
+const Types = [
+    {
+        id: 1,
+        name: 'Car'
+    },
+    {
+        id: 2,
+        name: 'Mobile'
+    },
+]
+
+const Type2=[{ type: 1, models: ['kk','kk'] }, { type: 2, models: ['test,gk'] }]
+
+/* output-->{
+    car: {
+        models: [],
+    },
+    mobiles: {
+        models: []
+    }
+} */
+
+function logic9obj9(arr1){
+    let empObj={};
+     /* for(let i=0;i<arr1.length;i++){
+          for(let j=0;j<arr2.length;j++){
+              if(arr1[i].id===arr2[j].type){
+                 empObj[arr1[i].name]={models:arr2[j].models}
+              }
+          }
+     } */
+     arr1.map((i,index)=>{
+        const values1=Type2.find(x=>x.type===i.id);
+        if(values1){
+            empObj[i.name]={models:values1.models}
+        }
+     })
+     console.log(empObj);
+}
+/* console.log(logic9obj9(Types)) */
+const logic10Arr10=[{
+    id:1,
+    name:{
+        data:'car'
+    }
+},
+{
+    id:2,
+    name:{
+        data:'apple'
+    }
+},
+{
+    id:3,
+    name:{
+        data:'car'
+    }
+},
+{
+    id:4,
+    name:{
+        data:'mango'
+    }
+},
+{
+    id:5,
+    name:{
+        data:'mango'
+    }
+},
+{
+    id:6,
+    name:{
+        data:'car'
+    }
+},
+{
+    id:7,
+    name:{
+        data:'bus'
+    }
+},
+{
+    id:8,
+    name:{
+        data:'parleg'
+    }
+}]
+/* output=>['parleg','bus',...] */
+function logic10Arr(arr){
+    let empArr=[];
+    for(let i=0;i<arr.length;i++){
+        if(!empArr.some(x=>x===arr[i].name.data)){
+             empArr=[...empArr,arr[i].name.data]
+        }
+    }
+    console.log(empArr);
+}
+/* console.log(logic10Arr(logic10Arr10)) */

@@ -13,6 +13,7 @@ import Practice from '../../pages/practice';
 import Todo from '../../pages/Todo';
 import Form from '../../pages/CustomForm';
 import TodoRedux from '../../pages/TodoRedux';
+import PracticeRedux from '../../pages/PracticeRedux';
 
 const Container = () => {
     return (
@@ -24,6 +25,7 @@ const Container = () => {
                 <Route path='/list' component={List} />
                 <Route path='/todo' component={Todo} />
                 <Route path='/todoRedux' component={TodoRedux} />
+                <Route path='/practiceRedux' component={PracticeRedux}/>
                 <Route path='/customForm' component={Form}/>
                 <Route path='/practice' component={Practice} />
                 <Route path='/woList/details/:age' component={WorkOrderListDetail}></Route>

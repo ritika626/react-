@@ -6,10 +6,12 @@
 
     const sagaMiddleware = createSagaMiddleware();
 
-    const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    //const composeEnhancer  =  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+    const composeEnhancer  =window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
     const store = createStore(
         rootReducer,
+        //compose(applyMiddleware(sagaMiddleware))
         composeEnhancer(applyMiddleware(sagaMiddleware)),
         );
       

@@ -1,7 +1,7 @@
-import { DrActionTypes, WoListActionTypes, TodoListReduxActionTypes } from './actions/types';
+import { DrActionTypes, WoListActionTypes, TodoListReduxActionTypes, BackgroundChange ,ListInPractice } from './actions/types';
 
 const woListIniState = { list: [], search: '' }
-const todoIntialState = { list: [], loader: false }
+const todoIntialState = { list: [], loader: false, status: false }
 
 export const dr = (state = {}, action) => {
     switch (action.type) {
@@ -16,7 +16,6 @@ export const dr = (state = {}, action) => {
 }
 
 export const woList = (state = woListIniState, action) => {
-    console.log('actio=====>', action);
     let searchList = state.list;
     switch (action.type) {
         case WoListActionTypes.SET_SEARCH:
@@ -36,22 +35,73 @@ export const woList = (state = woListIniState, action) => {
 }
 
 export const todoList = (state = todoIntialState, action) => {
-    console.log('action in todo', action);
+    //console.log('action in todo', action.type,action);
     switch (action.type) {
         case TodoListReduxActionTypes.SET_TODO_LIST_REQUEST:
-            console.log('data list in request',action.payload);
+            //console.log('data list in request',action.payload);
             return {
                 ...state,
                 loader: true,
             }
         case TodoListReduxActionTypes.SET_TODO_LIST_RECEIVED:
-            console.log('data list in received',action.payload);
+            //console.log('data list in received',action.payload);
             return {
                 ...state,
                 loader: false,
-                list:action.payload
+                list: action.payload
+            }
+        case TodoListReduxActionTypes.DELETE_TODO_LIST_REQUEST:
+            //console.log('delete todo request',action.payload);
+            return {
+                ...state,
+                list: state.list.filter(i => i.id !== action.payload)
+            }
+        case TodoListReduxActionTypes.EDIT_TODO_LIST_REQUEST:
+            console.log('EDIT todo request', action.payload);
+            return {
+                ...state,
+                editID: action.payload.id,
+                status: action.payload.status
+            }
+        case TodoListReduxActionTypes.SUBMIT_EDIT_TODO_LIST_REQUEST:
+            console.log('Submit EDIT todo request', action.payload);
+            let editList = [...state.list]
+            editList.map(i => {
+                if (i.id === state.editID) {
+                    i.title = action.payload.valueInput
+                }
+            })
+            return {
+                ...state,
+                list: editList,
+                editID: action.payload.id,
+                status: action.payload.status
+            }
+        case TodoListReduxActionTypes.CHECKED_TODO_LIST_REQUEST:
+            const newList = [...state.list]
+            newList.map((i, index) => {
+                if (i.id === action.payload.id) {
+                    i.completed = action.payload.isChecked
+                }
+            }
+            )
+            return {
+                ...state,
+                list: newList
             }
         default:
             return state
     }
 }
+
+export const backgroundChangeRedux = (state = { color: 'white' }, action) => {
+    switch (action.type) {
+        case BackgroundChange.SET_BACKGROUND_REQUEST:
+            return {
+                ...state,
+                color: action.payload
+            }
+        default:
+            return state
+    }
+} 
