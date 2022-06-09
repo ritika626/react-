@@ -4,6 +4,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
 
 const style = {
     position: 'absolute',
@@ -96,6 +99,7 @@ const Todo = () => {
     const [todoList, setTodoList] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [editTodo,setEditTodo]=useState(null);
+    const [startDate, setStartDate] = useState(null);
 
     const handleTab = (id) => {
         setActive(id)
@@ -128,6 +132,9 @@ const Todo = () => {
     const handleEdit = (id) => {
         setShowModal(true);
         setEditTodo(id);
+        if(id?.date){
+            setStartDate(new Date(id?.date))
+        }
     }
 
     const handleEditText=(e)=>{
@@ -135,12 +142,14 @@ const Todo = () => {
     }
     console.log('todolist', todoList);
 
-    const handleSave=(i)=>{
+    const handleSave=(i,startDate)=>{
          const saveTodo=[...todoList];
          const todoIndex =saveTodo.findIndex(x=>x.id===i.id)
          saveTodo[todoIndex].title=i.title
+         saveTodo[todoIndex].date=moment(startDate).format('MM-DD-YYYY');
          setEditTodo(saveTodo);
          setShowModal(!showModal);
+         setStartDate(null)
     }
 
     const renderTabContent = () => {
@@ -151,7 +160,7 @@ const Todo = () => {
                         {todoList?.map((i, index) =>
                             <div>
                                 <div className={classes.checkBox}>
-                                    <h3 key={i.id} className={`h3Class ${i.completed ? classes.LineThrou : ''}`}>{i.title}</h3>
+                                    <h3 key={i.id} className={`h3Class ${i.completed ? classes.LineThrou : ''}`}>{i.title}&nbsp;{i?.date}</h3>
                                     <div className={classes.editClass} onClick={()=>handleEdit(i)}>Edit</div>
                                     <input type='checkbox' checked={i.completed} onChange={(e) => handlecheckChange(e, i.id)}>
                                     </input>
@@ -171,7 +180,8 @@ const Todo = () => {
                                 >
                                     <Box sx={style}>
                                         <input className={classes.inputClass} type='text' value={editTodo?.title} onChange={(e)=>handleEditText(e)}></input>
-                                        <button onClick={()=>handleSave(editTodo)}>Save</button>
+                                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                        <button onClick={()=>handleSave(editTodo,startDate)}>Save</button>
                                     </Box>
                                 </Modal>
                             )

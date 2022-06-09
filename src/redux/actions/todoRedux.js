@@ -27,10 +27,27 @@ const checkedTodo = {
       action(TodoListReduxActionTypes.CHECKED_TODO_LIST_REQUEST, data),
 }
 
+const addNewModal = {
+  request: (data) =>
+    action(TodoListReduxActionTypes.ADD_NEW_TODO_MODAL_REQUEST, data),
+}
+
+const inputValueNewTodo = {
+  request: (data) =>
+    action(TodoListReduxActionTypes.VALUE_NEW_TODO_INPUT_REQUEST, data),
+}
+const submitValueNewTodo = {
+  request: (data) =>
+    action(TodoListReduxActionTypes.SUBMIT_NEW_TODO_INPUT_REQUEST, data),
+}
+
 const actions = {
     getTodoListAction,
     deleteTodo,
     checkedTodo,
-    editTodo
+    editTodo,
+    inputValueNewTodo,
+    addNewModal,
+    submitValueNewTodo
 };
 export default actions;

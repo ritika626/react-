@@ -1,7 +1,7 @@
-import { DrActionTypes, WoListActionTypes, TodoListReduxActionTypes, BackgroundChange ,ListInPractice } from './actions/types';
+import { DrActionTypes, WoListActionTypes, TodoListReduxActionTypes, BackgroundChange, ListInPractice } from './actions/types';
 
 const woListIniState = { list: [], search: '' }
-const todoIntialState = { list: [], loader: false, status: false }
+const todoIntialState = { list: [], loader: false, status: false, openModal: false, inputValue: '' }
 
 export const dr = (state = {}, action) => {
     switch (action.type) {
@@ -57,14 +57,28 @@ export const todoList = (state = todoIntialState, action) => {
                 list: state.list.filter(i => i.id !== action.payload)
             }
         case TodoListReduxActionTypes.EDIT_TODO_LIST_REQUEST:
-            console.log('EDIT todo request', action.payload);
             return {
                 ...state,
                 editID: action.payload.id,
                 status: action.payload.status
             }
+        case TodoListReduxActionTypes.ADD_NEW_TODO_MODAL_REQUEST:
+            return {
+                ...state,
+                openModal: action.payload.openModal
+            }
+        case TodoListReduxActionTypes.VALUE_NEW_TODO_INPUT_REQUEST:
+            return {
+                ...state,
+                inputValue: action.payload.inputValue
+            }
+        case TodoListReduxActionTypes.SUBMIT_NEW_TODO_INPUT_REQUEST:
+            let newList1=[...state.list,{id:new Date(),title:action.payload.inputValue,completed:false}]
+            return {
+                ...state,
+                list:newList1
+            }
         case TodoListReduxActionTypes.SUBMIT_EDIT_TODO_LIST_REQUEST:
-            console.log('Submit EDIT todo request', action.payload);
             let editList = [...state.list]
             editList.map(i => {
                 if (i.id === state.editID) {

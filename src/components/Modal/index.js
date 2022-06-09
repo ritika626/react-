@@ -17,7 +17,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal({handleClose,open,onchange,onclickSubmit}) {
+export default function BasicModal({handleClose,open,onchange,onclickSubmit,title}) {
   return (
     <div>
       <Modal
@@ -27,6 +27,7 @@ export default function BasicModal({handleClose,open,onchange,onclickSubmit}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <h4>{title}</h4>
         <input type='text' onChange={onchange} />
         <Button onClick={onclickSubmit}>Submit</Button>
         </Box>

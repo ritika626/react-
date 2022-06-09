@@ -31,9 +31,9 @@ const Arr = [{
 
 const PracticeRedux = () => {
     const dispatch = useDispatch();
-    const { color} = useSelector(state => state.backgroundChangeRedux);
-    const { status ,list} = useSelector(state => state.EditInputReducer);
-    console.log(status);
+    const { color } = useSelector(state => state.backgroundChangeRedux);
+    const { editAddress, list } = useSelector(state => state.EditInputReducer);
+    console.log('editAddress',editAddress);
 
     const handleClick = (e) => {
         dispatch(actions.backgroungChange.request(e.target.innerHTML))
@@ -67,29 +67,61 @@ const PracticeRedux = () => {
         dispatch(actionsEdit.listInPractice.request(Arr));
     }, []);
 
-    const handleEdit=()=>{
-        dispatch(actionsEdit.editForm.request({status:true}))
+    const handleEdit = (data) => {
+        dispatch(actionsEdit.editForm.request(data))
+    }
+
+    const handleSave = (id) => {
+        console.log('id',id);
+        let change=false;
+        for(let i=0;i<list.length;i++){
+            if(editAddress?.id === list[i]?.id && (editAddress?.address?.city===list[i]?.address?.city || (editAddress?.address?.pincode ===list[i]?.address?.pincode))){
+                change=true
+                break
+            }
+        }
+        if(change){
+            alert('values are same');
+            return
+        }
+        dispatch(actionsEdit.SaveInput.request(id))
+    }
+
+    const handleChange = (e,key) => {
+        dispatch(actionsEdit.handleEditSave.request({value:e.target.value,key}))
     }
 
     return (
         <>
-           {
-               list?.map((i,index)=>{
-                   return (
-                       <div key={index}>
-                           <p>{i.name}</p>
-                           <div>
-                           <p>Address: {i.address.city} {i.address.pincode}</p>
-                           <div>
-                           <input type="text"></input>
-                           <input type="text"></input>
-                           </div>
-                           <button onClick={handleEdit}>Edit</button>
-                           </div>
-                       </div>
-                   )
-               })
-           }
+            {
+                list?.map((i, index) => {
+                    return (
+                        <div key={index}>
+                            <p>{i.name}</p>
+                            <div>
+                                <p>Address: {i.address.city} {i.address.pincode}</p>
+                                <div>
+                                    {
+                                        editAddress?.id === i.id ? (
+                                            <>
+                                                    <input type="text" value={editAddress.address.city} onChange={(e) => handleChange(e,'city')}></input>
+                                                    <input type="text"  value={editAddress.address.pincode} onChange={(e) => handleChange(e,'pincode')}></input>
+                                            </>
+                                        ) : ''
+                                    }
+
+                                </div>
+                                {
+                                        editAddress?.id === i.id ? 
+                                        <button onClick={() => handleSave(i.id)}>save</button>
+                                     : <button onClick={() => handleEdit(i)}>Edit</button>
+                                }
+
+                            </div>
+                        </div>
+                    )
+                })
+            }
             {/* <div className={classes.container}>
       <div className={`${classes.box}`}>
           <h4>here a box</h4>

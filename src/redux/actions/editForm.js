@@ -11,6 +11,13 @@ const editForm={
     request:(data)=>action(EditForm.SET_EDIT_INPUT,data)
 }
 
+const handleEditSave={
+    request:(data)=>action(EditForm.SET_HANDLE_SAVE_EDIT_INPUT,data)
+}
+
+const SaveInput={
+    request:(data)=>action(EditForm.SET_SAVE_INPUT,data)
+}
 const listInPractice = {
     request: (data) =>
       action(ListInPractice.SET_LIST_REQUEST, data),
@@ -18,7 +25,9 @@ const listInPractice = {
 
 const actionsEdit={
     editForm,
-    listInPractice
+    listInPractice,
+    handleEditSave,
+    SaveInput
 }
 
 export default actionsEdit;
