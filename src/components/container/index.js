@@ -16,6 +16,11 @@ import TodoRedux from '../../pages/TodoRedux';
 import PracticeRedux from '../../pages/PracticeRedux';
 import TicToeRedux from '../../pages/TicToeRedux';
 import Calculator from '../../pages/Calculator';
+import Box from '../../pages/Box';
+import User from '../../pages/Users';
+import Library from '../../pages/Library';
+import Settings from '../../pages/Settings';
+import LayoutNav from '../../pages/LayoutSelf';
 
 const Container = () => {
     return (
@@ -26,7 +31,12 @@ const Container = () => {
                 <Route path='/about' component={About} />
                 <Route path='/list' component={List} />
                 <Route path='/todo' component={Todo} />
+                <Route path='/user' component={User} />
                 <Route path='/calculator' component={Calculator} />
+                <Route path='/library' component={Library} />
+                <Route path='/settings' component={Settings} />
+                <Route path='/layoutNav' component={LayoutNav} />
+                <Route path='/box' component={Box} />
                 <Route path='/todoRedux' component={TodoRedux} />
                 <Route path='/ticToeRedux' component={TicToeRedux} />
                 <Route path='/practiceRedux' component={PracticeRedux}/>

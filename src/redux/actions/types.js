@@ -21,6 +21,7 @@ export const TodoListReduxActionTypes={
 
 export const BackgroundChange={
     SET_BACKGROUND_REQUEST:'SET_BACKGROUND_REQUEST',
+    SET_HEADER_COLOR_REQUEST:'SET_HEADER_COLOR_REQUEST'
 }
 
 export const ListInPractice={
@@ -32,3 +33,4 @@ export const EditForm={
     SET_SAVE_INPUT:"SET_SAVE_INPUT",
     SET_HANDLE_SAVE_EDIT_INPUT:"SET_HANDLE_SAVE_EDIT_INPUT",
 }
+

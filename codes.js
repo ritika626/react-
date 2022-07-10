@@ -1412,8 +1412,8 @@ function logic20Obj20(arr2) {
 
 //output====>[name] condition age>4 and completed=true
 function logic20Obj21(arr1, num, ope) {
-    let a=null;
-    let b=arr1.find(i=>i.age>num)?.name;
+    let a = null;
+    let b = arr1.find(i => i.age > num)?.name;
     /* for (let i = 0; i < arr1.length; i++) {
         //console.log(arr1[i]);
         //console.log(JSON.stringify(ope));
@@ -1433,12 +1433,458 @@ function logic20Obj21(arr1, num, ope) {
 //console.log(logic20Obj21(logic20Obj1, 4, '>'));
 
 //output {1:{data}}
-function logic20Obj22(arr1){
-    let empObj={};
-    for(let i=0;i<arr1.length;i++){
+function logic20Obj22(arr1) {
+    let empObj = {};
+    for (let i = 0; i < arr1.length; i++) {
         //console.log(arr1[i]);
-        empObj={...empObj,[arr1[i].id]:{name:arr1[i].name,age:arr1[i].age}}
+        empObj = { ...empObj, [arr1[i].id]: { name: arr1[i].name, age: arr1[i].age } }
     }
     console.log(empObj);
 }
 //console.log(logic20Obj22(logic20Obj1));
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '%', '/', 'clr', 'x', '=']
+
+function divideArr(arr1) {
+    let empArr = []
+    const col = 3
+    let row = arr1.length / col
+    console.log(row);
+    for (let i = 0; i < arr1.length; i++) {
+        let test = i / 3
+        console.log(test.toString().split('.').length === 1)
+        /* if(i%3 != 0){
+
+        } */
+    }
+}
+//console.log(divideArr(arr))
+
+/* const nums1 = [4,9,5]
+const nums2 = [9,4,9,8,4] */
+const nums1 = [1, 2, 2, 1]
+const nums2 = [2, 2]
+function intersectionArr(arr1) {
+    let empArr = [];
+    for (let i = 0; i < nums1.length; i++) {
+        //console.log(nums2[i]);
+        if (nums2.includes(nums1[i])) {
+            empArr = [...empArr, nums1[i]]
+        }
+    }
+    console.log(empArr);
+}
+//console.log(intersectionArr(nums1))
+
+function logic20Arr21(obj) {
+    let empObj = null || {};
+    for (let i in obj) {
+        //console.log(obj[i]);
+        //empObj={...empObj,[obj[i][0].name]:obj[i]}
+        let empArr = [];
+        for (let x = obj[i].length - 1; x >= 0; x--) {
+            //console.log(obj[i][x]);
+            empArr = [...empArr, obj[i][x]]
+        }
+        empObj = { ...empObj, [obj[i][0].name]: empArr }
+    }
+    console.log(empObj);
+    //console.log(null && {});
+}
+//console.log(logic20Arr21(logic15Obj))
+
+const obj1 = {
+    name: 'ritika',
+    age: 23
+}
+
+function inCheck(num) {
+    const obj2 = { 5: 8 }
+    if (num in obj2) {
+        console.log(obj2[num])
+    }
+}
+//console.log(inCheck(5))
+
+// string reverse ouptut=>'akitir'
+
+function reverseString(str) {
+    let arrStr = str.split('')
+    let empArr = [];
+    for (let i = arrStr.length - 1; i >= 0; i--) {
+        empArr = [...empArr, arrStr[i]]
+    }
+    console.log(empArr.join(''));
+}
+//console.log(reverseString('ritika is the best'))
+
+function countCharacter(str, char) {
+    let arr = str.split('');
+    //let count=0
+    //let count=arr.filter(i=>i===char).length   (optimised correct method )
+    /* for(let i=0;i<arr.length;i++){         (correct)
+       if(arr[i]===char){
+          count++
+       }
+    } */
+    console.log(count);
+}
+//console.log(countCharacter('shussam','s'))
+
+//output=>[[1,3],[1,4],[2,3],[2,4]]
+function permutations(arr1, arr2) {
+    let empArr = [];
+    for (let i = 0; i < arr1.length; i++) {
+        //console.log(arr1[i]);
+        for (let j = 0; j < arr2.length; j++) {
+            //console.log(arr1[i],arr2[j]);
+            empArr = [...empArr, [arr1[i], arr2[j]]]
+        }
+    }
+    console.log(empArr)
+}
+//console.log(permutations([1,2],[3,4]))
+
+function palindrome(str) {
+    let strArr = str.split('');
+    let empArr = []
+    for (let i = strArr.length - 1; i >= 0; i--) {
+        //console.log(strArr[i]);
+        empArr = [...empArr, strArr[i]]
+    }
+    if (strArr.join('') === empArr.join('')) {
+        console.log('true')
+    }
+    else {
+        console.log('false');
+    }
+}
+//console.log(palindrome('madam'));
+
+//output=>[1,2,4,6,3,7,9,0] need two values from array whose sum should be equal to parameter.
+function sumOfTwoValues(arr, num) {
+    let empArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        for (let j = 0; j < arr.length; j++) {
+            //console.log(arr[j]);
+            if (arr[i] + arr[j] === num) {
+                empArr = [arr[i], arr[j]]
+                //return empArr; ( only if first needed occurence)
+            }
+        }
+    }
+    console.log(empArr);
+}
+//console.log(sumOfTwoValues([1,2,4,6,3,7,9,0],12))
+
+function missingConsecutiveNum(arr) {
+    let empArr = [];
+    let sortArr = arr.sort((a, b) => a - b)
+    for (let i = 0; i < sortArr.length - 1; i++) {
+        //console.log(arr[i]);
+        if (arr[i] + 1 != arr[i + 1]) {
+            empArr = [...empArr, arr[i] + 1]
+        }
+    }
+    console.log(empArr);
+}
+//console.log(missingConsecutiveNum([1,2,6,3,4,7,9,0]));
+
+function missingNumber(arr) {
+    let empArr = [];
+    let max = Math.max(...arr);
+    for (let i = 0; i <= max; i++) {
+        if (!arr.includes(i)) {
+            empArr = [...empArr, i]
+        }
+    }
+    console.log(empArr);
+}
+//console.log(missingNumber([1,2,6,3,4,7,9,0,100]))
+
+//output=>>>[110,120,10,20,30,70,102,104,160] count the no. of zeros
+
+function countZeros(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        let zeroIn = arr[i].toString().split('');
+        let zeros = zeroIn.filter(i => i === '0').length;
+        if (zeros) {
+            count = count + zeros;
+        }
+    }
+    console.log(count);
+}
+//console.log(countZeros([110,120,10,20,30,70,102,104,160,1001]));
+
+const arr21Obj = [
+    {
+        id: 1,
+        name: 'ritika1',
+        testId: 101
+    },
+    {
+        id: 2,
+        name: 'ritika2',
+        testId: 102
+    },
+    {
+        id: 2,
+        name: 'ritika2',
+        testId: 108
+    },
+    {
+        id: 3,
+        name: 'ritika3',
+        testId: 103
+    },
+    {
+        id: 5,
+        name: 'ritika4',
+        testId: 104
+    },
+    {
+        id: 4,
+        name: 'ritika5',
+        testId: 105
+    },
+    {
+        id: 4,
+        name: 'ritika6',
+        testId: 106
+    }
+]
+// output===>{1:[{id:testId,name:'roitiks'}]}
+
+function logic22Obj(arr) {
+    let empObj = {};
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        if (empObj[arr[i].id]) {
+            empObj[arr[i].id] = [...empObj[arr[i].id], { id: arr[i].testId, name: arr[i].name }]
+        }
+        else {
+            empObj[arr[i].id] = [{ id: arr[i].testId, name: arr[i].name }]
+        }
+    }
+    console.log(empObj);
+}
+//console.log(logic22Obj(arr21Obj))
+
+// output===>[1,3,6,10]
+function sumOfPreviousValues(arr) {
+    let empArr = [];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        count += arr[i]
+        empArr = [...empArr, count]
+    }
+    console.log(empArr);
+}
+//console.log(sumOfPreviousValues([1,2,3,4,5,6,0,8]))
+
+function compareArr(arr1, arr2, check) {
+    //check arr are same , then values are same, whether input is array or obj
+    /*  try {
+         if (arr1.length === arr2.length) {
+             let str=''
+             for(let i=0;i<arr1.length;i++){
+                  if(arr1[i]===arr2[i]){
+                     str=true;
+                  }
+                  else{
+                     str=false;
+                  }
+             }
+             return str;
+         }
+     }
+     catch (err) {
+         console.log('kkk');
+     } */
+    if (Array.isArray(arr1) && Array.isArray(arr2)) {
+        return arr1.every((_, index) => arr1[index] === arr2[index]);
+    }
+    else {
+        return false;
+    }
+}
+//console.log(compareArr([2, 3, 4], [2, 3, 4], 'deep'))
+
+// Find the largest and smallest number in an unsorted array of integers ({ "max": 100, "min": 1 })
+
+function findNum(arr) {
+    let num = arr[0];
+    let num1 = arr[0];
+    let empObj = {};
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        if (arr[i] <= num) {
+            num = arr[i]
+            empObj = { ...empObj, 'min': num }
+        }
+        if (arr[i] >= num1) {
+            num1 = arr[i]
+            empObj = { ...empObj, 'max': num1 }
+        }
+    }
+    //  /console.log(empObj);
+}
+//console.log(findNum([60,1, 2, 36, 4,-1, 51, 6,340, 78, 8, 9, 12, 20, 32,320]))
+
+function largerThan20(arr, callback) {
+    let empArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        //console.log(arr[i]);
+        if (arr[i] >= 20) {
+            empArr = [...empArr, arr[i]]
+        }
+    }
+    callback('1', empArr);
+    /*  arr.map((i,index)=>{
+
+     }) */
+}
+/* largerThan20([60,1, 2, 36, 4,-1, 51, 6,340, 78, 8, 9, 12, 20, 32,320],(str,value)=>{
+    console.log(str,value);
+}) */
+
+function arrayOfObjCompare(arr1, arr2) {
+    /* const a = arr1.every((i,index)=>JSON.stringify(i)===JSON.stringify(arr2[index]))  (desi method as told by shubham)
+    return a */
+    if (arr1.length === arr2.length) {
+        /* for(let i=0;i<arr1.length;i++){   ( with for loop code )
+                   if(arr1[i].name===arr2[i].name && arr1[i].age===arr2[i].age){
+                    console.log('objects are same')
+                   }
+                   else{
+                    console.log('objects are not same');
+                   }
+        } */
+        arr1.some((element, index) => {
+            //console.log(element.name)
+            if (element.name === arr2[index].name && element.age === arr2[index].age) {
+                console.log('objects are same');
+            }
+            else {
+                console.log('objects are not same');
+            }
+        });
+    }
+    else {
+        console.log('arrays not same');
+    }
+}
+//console.log(arrayOfObjCompare([{name:'ritika',age:24},{name:'shubham',age:26}],[{name:'ritika',age:25},{name:'shubham',age:26}]))
+
+//multiply(5)(6)
+
+function multiply(a) {
+    return function multiply(b) {
+        return function multiply(c) {
+            return a * b * c
+        }
+    }
+}
+//console.log(multiply(2)(5))
+
+//output==>[[1,2,3,4,5],[6,7,8,9,0]]
+
+function sumOfValues(arr) {
+    let sum = 0;
+    /*  for(let i=0;i<arr.length;i++){
+         for(let j=0;j<arr[i].length;j++){
+            console.log(arr[i][j])
+            sum+=arr[i][j]
+         }
+     } */
+     arr.map((i, index) => i.map((j, index) => {
+         sum += j 
+        }));
+        return sum
+}
+//console.log(sumOfValues([[1, 2, 3, 4, 5], [6, 7, 8, 9, 0], [100,80]]));
+
+const arrOfObj=[{
+    id:1,
+    name:'ritika',
+    age:25,
+    country:'India',
+    code:'abc'
+},
+{
+    id:2,
+    name:'ritika1',
+    age:26,
+    country:'India',
+    code:'xyz'
+},
+{
+    id:3,
+    name:'ritika2',
+    age:25,
+    country:'India',
+    code:'abc'
+},
+{
+    id:4,
+    name:'ritika3',
+    age:26,
+    country:'India',
+    code:'xyz'
+}
+]
+
+const arrOfObj2=[
+{
+    id:2,
+    name:'ritika1',
+    age:26,
+    country:'India',
+    class:'12th'
+},
+{
+    id:1,
+    name:'ritika sharma',
+    age:25,
+    country:'India',
+    class:'11th'
+},
+{
+    id:5,
+    name:'ritika4',
+    age:26,
+    country:'India',
+    class:'15th'
+}]
+
+//output=>merge the array
+
+function mergeObj(arr1,arr2){
+     let empArr=[];
+     for(let i=0;i<arr2.length;i++){
+          //console.log(arr1[i]);
+          let empObj={}
+          if(arr1.some(j=>j.id===arr2[i].id)){
+            empObj={...arr1[i],...arr2[i]}
+          }
+          else{
+            empObj={...arr2[i]}
+          }
+          empArr=[...empArr,empObj]
+     }
+     console.log(empArr);
+}
+//mergeObj(arrOfObj,arrOfObj2);
+
+function findVowels(str){
+      const strSplit=str.split('');
+       return strSplit.filter(i=>'aeiou'.includes(i)).length
+      
+}
+//console.log(findVowels('ritikaii'));
+
+//compare objects

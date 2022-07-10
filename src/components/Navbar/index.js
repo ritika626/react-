@@ -3,51 +3,58 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Link, NavLink, useHistory } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useSelector } from 'react-redux';
 
-const useStyles = makeStyles({
-    navbar: {
-        background: '#ffffff',
-        borderBottom: '1px solid #31899d',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'end',
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        zIndex: 1
-    },
-    menu: {
-        listStyle: 'none',
-    },
-    menuItem: {
-        color: 'white ',
-        background: 'seagreen',
-        marginRight: '10px',
-        display: 'inline-block',
-        padding: '10px 15px',
-    },
-    link: {
-        color: 'white',
-        textDecoration: 'none'
-    },
-    // active: {
-    //     backgroundColor: 'yellow'
-    // },
-    testColor: {
-        color: 'black',
-    }
-})
+
 
 const Navbar = () => {
-    const classes = useStyles();
+    
     const history = useHistory();
     const { pathname } = useLocation();
+    const { backgroundColor } = useSelector(state=>state.backgroundChangeRedux)
+
+    console.log(backgroundColor);
 
     const logoutButton = () => {
         localStorage.removeItem('token');
         history.replace('/');
     }
 
+    const useStyles = makeStyles({
+        navbar: {
+            background: backgroundColor || '#ffffff',
+            borderBottom: '1px solid #31899d',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'end',
+            position: 'sticky',
+            top: 0,
+            left: 0,
+            zIndex: 1
+        },
+        menu: {
+            listStyle: 'none',
+        },
+        menuItem: {
+            color: 'white ',
+            background: 'seagreen',
+            marginRight: '10px',
+            display: 'inline-block',
+            padding: '10px 15px',
+        },
+        link: {
+            color: 'white',
+            textDecoration: 'none'
+        },
+        // active: {
+        //     backgroundColor: 'yellow'
+        // },
+        testColor: {
+            color: 'black',
+        }
+    })
+
+    const classes = useStyles();
     return (
         <div className={classes.navbar}>
             <ul className={classes.menu}>

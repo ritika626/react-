@@ -9,7 +9,15 @@ const backgroungChange = {
       action(BackgroundChange.SET_BACKGROUND_REQUEST, data),
 }
 
+const backgroundChangeHeader={
+    request:(data)=>{
+        return action(BackgroundChange.SET_HEADER_COLOR_REQUEST,data)
+    }
+    
+}
+
 const actions = {
     backgroungChange,
+    backgroundChangeHeader
 };
 export default actions

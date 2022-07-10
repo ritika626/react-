@@ -107,13 +107,21 @@ const Todo = () => {
 
     useEffect(async () => {
         try {
+            const [response1,response2] = await Promise.all([fetch('https://jsonplaceholder.typicode.com/users'),fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10')])
+            console.log(await response1.json());
+            console.log(await response2.json());
+        }
+        catch (error) {
+            console.log(error);
+        }
+       /*  try {
             const response = await fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10')
             const result = await response.json()
             setTodoList(result);
         }
         catch (error) {
             console.log(error);
-        }
+        } */
     }, [])
 
     const handlecheckChange = (e, id) => {

@@ -73,10 +73,10 @@ export const todoList = (state = todoIntialState, action) => {
                 inputValue: action.payload.inputValue
             }
         case TodoListReduxActionTypes.SUBMIT_NEW_TODO_INPUT_REQUEST:
-            let newList1=[...state.list,{id:new Date(),title:action.payload.inputValue,completed:false}]
+            let newList1 = [...state.list, { id: new Date(), title: action.payload.inputValue, completed: false }]
             return {
                 ...state,
-                list:newList1
+                list: newList1
             }
         case TodoListReduxActionTypes.SUBMIT_EDIT_TODO_LIST_REQUEST:
             let editList = [...state.list]
@@ -108,14 +108,21 @@ export const todoList = (state = todoIntialState, action) => {
     }
 }
 
-export const backgroundChangeRedux = (state = { color: 'white' }, action) => {
+export const backgroundChangeRedux = (state = { color: 'white' , backgroundColor:''}, action) => {
     switch (action.type) {
         case BackgroundChange.SET_BACKGROUND_REQUEST:
             return {
                 ...state,
                 color: action.payload
             }
+
+        case BackgroundChange.SET_HEADER_COLOR_REQUEST:
+            return {
+                ...state,
+                backgroundColor: action.payload
+            }
         default:
             return state
     }
-} 
+}
+
