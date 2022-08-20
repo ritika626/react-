@@ -21,6 +21,8 @@ import User from '../../pages/Users';
 import Library from '../../pages/Library';
 import Settings from '../../pages/Settings';
 import LayoutNav from '../../pages/LayoutSelf';
+import ApiAccord from '../../pages/ApiAccord';
+import BlogContent from '../../components/BlogContent';
 
 const Container = () => {
     return (
@@ -33,6 +35,8 @@ const Container = () => {
                 <Route path='/todo' component={Todo} />
                 <Route path='/user' component={User} />
                 <Route path='/calculator' component={Calculator} />
+                <Route path='/apiAccord' component={ApiAccord} />
+                <Route path='/blogContent/:id' component={BlogContent} />
                 <Route path='/library' component={Library} />
                 <Route path='/settings' component={Settings} />
                 <Route path='/layoutNav' component={LayoutNav} />

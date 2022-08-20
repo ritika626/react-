@@ -1888,3 +1888,187 @@ function findVowels(str){
 //console.log(findVowels('ritikaii'));
 
 //compare objects
+
+const sArr=[{name:'z',age:50},{name:'a',age:20},{name:'k',age:21},{name:'s',age:20},{name:'b',age:21},{name:'e',age:21},{name:'c',age:17},{name:'ritika',age:1}]
+
+//output==>{ 20: [{ name: 'ritika', age: '20' }] }
+
+function groupObjects(arr){
+    let empObj={};
+    for (let i=0;i<arr.length;i++){
+        //console.log(arr[i]);
+        if(empObj[arr[i].name]){
+            empObj={...empObj,[arr[i].name]:[...empObj[arr[i].name],arr[i]]}
+        }
+        else{
+            empObj={...empObj,[arr[i].name]:[arr[i]]}
+        }
+    }
+    console.log(empObj);
+}
+//groupObjects(sArr);
+
+let str1='The ritikadgfuyugsdfgiudhfiudhfui sharma is having guru shubham dsjfhsdhfiusdhiusdh'
+
+function longestWord(str){
+     const newStr=str.split(' ');
+     let count=0;
+     let word;
+     for(let i=0 ,len=newStr.length; i<len ;i++){
+        //console.log(newStr[i].length);
+        if(newStr[i].length>count){
+              count=newStr[i].length
+              word=newStr[i]     
+        }
+     }
+     console.log(count,word);
+}
+//longestWord(str1);
+
+//fizzbuzz
+function fizzbuzz(num){
+    if(num%3===0 && num%5===0){
+        return 'FizzBuzz';
+    }
+    else if(num%5===0){
+        return 'Buzz';
+    }
+    else if(num%3===0){
+        return 'Fizz'
+    }
+    else{
+        return '';
+    }
+}
+//console.log(fizzbuzz(20));
+
+/* let s={name:'ritika'};
+let n=s;
+n.age=1
+console.log(n,s); */
+
+function countDigits(num){
+    const newNum=num.toString().length;
+    console.log(newNum);
+}
+//console.log(countDigits(56));
+
+//output=>countTrue([true, false, false, true, false]) ➞ 2
+function  countTrue(arr){
+     const newArr=arr.filter(i=>i).length;
+     console.log(newArr);
+}
+//console.log(countTrue([ false,true, false, false]));
+
+const logic22Arr=[1,2,[1],[[[1]]]]
+//output=>normal array [1,2,1,1]
+
+function normalArray(arr){
+     //const newArr=arr.flat(20);
+     for(let i=0,len=arr.length;i<len;i++){
+        normalArray(arr[i]);
+     }
+}
+//console.log(normalArray(logic22Arr))
+
+function removeVowels(str){
+    let empStr=[]
+    let empArr=[];
+    let newStr=str.split('');
+    for(let i=0, len=newStr.length;i<len;i++){
+        //console.log(newStr[i])
+        if(!'aeiou'.includes(newStr[i])){
+            empArr=[...empArr,newStr[i]]
+         }
+    }
+    return empArr.join('');
+    }
+    
+//console.log(removeVowels('sun rises'));
+
+function anagram(str1,str2){
+     if(str1.length===str2.length){
+        let newStr=str1.split('');
+        for(let i=0,len=newStr.length;i<len;i++){
+            //console.log(newStr[i]);
+            if(true){
+
+            }
+        }
+     }
+     else{
+        return false
+     }
+    
+}
+//console.log(anagram('naps' , 'pan'))
+
+const obj9={'ritIka':[4,4,5,5,6],'shubham':[1,2,3],'shbhaiem':[1,1,2,3]}
+
+function vowelsLength(){
+    let result=[];
+    for(let i in obj9){
+        let vowels=[]
+        const splitI=i.split("");
+        for(let k=0;k<splitI.length;k++){
+             if("aeiou".includes(splitI[k].toLowerCase()) && !vowels.some(x=>x===splitI[k].toLowerCase())){
+                vowels=[...vowels,splitI[k].toLowerCase()]
+             }
+        }
+        const sum10=obj9[i].reduce((prev,next)=>prev+next)
+        if(vowels.length>=2 && sum10<10 ){
+            result=[...result,i]
+        }
+    }
+    console.log(result);
+}
+//console.log(vowelsLength(obj9));
+
+const obj10 = {
+    ok_has_1: [
+      { name: "a", value: 2 },
+      { name: "b", value: 3 },
+    ],
+    ok_has_not_2: { address: "abc", phone: "123" },
+    ok_has_not_1: { address: "abc1", phone: "23" },
+    ok_has_2: [
+      { name: "c", value: 4 },
+      { name: "d", value: 5 },
+    ],
+  };
+
+  function appendValues(obj){
+     let empObj={};
+     let hasNot=[];
+     let has=[];
+     for(let i in obj){
+        if(i.includes('has_not')){
+             hasNot=[...hasNot,i]
+        }
+        else{
+            has=[...has,i]
+        }
+     }
+     hasNot.map((x,index)=>{
+        
+     })
+  }
+ // console.log(appendValues(obj10));
+
+ function filteredArray(arr, elem) {
+    let newArr = [];
+    // Only change code below this line
+      for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr[i].length;j++){
+             //console.log(arr[i][j]);
+             if(arr[i].includes(elem)){
+                   arr[i].filter(k=>k!=elem)
+             }
+        }
+        newArr=arr[i]
+      }
+    // Only change code above this line
+    return newArr;
+  }
+  
+  //console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));

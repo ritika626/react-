@@ -24,3 +24,14 @@ multi api calls
 router in vue
 
 weather app==>
+=====>things to study:
+regex
+hooks-> 
+debounce and throttle
+accordian
+recursion
+email template
+
+today:
+search filter
+
