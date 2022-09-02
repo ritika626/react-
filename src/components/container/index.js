@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import About from '../../pages/About';
 import List from '../../pages/List';
@@ -23,6 +23,7 @@ import Settings from '../../pages/Settings';
 import LayoutNav from '../../pages/LayoutSelf';
 import ApiAccord from '../../pages/ApiAccord';
 import BlogContent from '../../components/BlogContent';
+const ChatRedux = React.lazy(() => import('../../pages/Chat'))
 
 const Container = () => {
     return (
@@ -39,12 +40,17 @@ const Container = () => {
                 <Route path='/blogContent/:id' component={BlogContent} />
                 <Route path='/library' component={Library} />
                 <Route path='/settings' component={Settings} />
+                <Route path='/chat' >
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ChatRedux />
+                    </Suspense>
+                </Route>
                 <Route path='/layoutNav' component={LayoutNav} />
                 <Route path='/box' component={Box} />
                 <Route path='/todoRedux' component={TodoRedux} />
                 <Route path='/ticToeRedux' component={TicToeRedux} />
-                <Route path='/practiceRedux' component={PracticeRedux}/>
-                <Route path='/customForm' component={Form}/>
+                <Route path='/practiceRedux' component={PracticeRedux} />
+                <Route path='/customForm' component={Form} />
                 <Route path='/practice' component={Practice} />
                 <Route path='/woList/details/:age' component={WorkOrderListDetail}></Route>
                 <Route path='/woList' component={WorkOrderList}></Route>

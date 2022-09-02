@@ -30,7 +30,7 @@ const Navbar = () => {
             position: 'sticky',
             top: 0,
             left: 0,
-            zIndex: 1
+            zIndex: 2
         },
         menu: {
             listStyle: 'none',

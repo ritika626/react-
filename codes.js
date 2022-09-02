@@ -2072,3 +2072,14 @@ const obj10 = {
   }
   
   //console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+  function getSum(n){
+      let sum=0;
+      for (let i=1;i<=n;i++){
+        if(i%2 !== 0){
+            sum+=i
+        }
+      }
+      return sum;
+  }
+  console.log(getSum(3))
