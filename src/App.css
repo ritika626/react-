@@ -37,22 +37,50 @@
   }
 }
 
-.boxWrapper{
+.boxWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.box{
-  display:flex;
+.box {
+  display: flex;
   justify-content: center;
   align-items: center;
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   border: 1px solid black;
 }
 
-.active{
+.active {
   background-color: #282c34;
-  color:white
+  color: white;
+}
+
+.badge {
+  width: 10px;
+  border-left: 5px solid red;
+  height: 40px;
+}
+
+.progress-bar {
+  height: 40px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #b8babe;
+}
+
+.progress-done {
+  height: 100%;
+  animation: widthease;
+  background-color: #2f8826;
+}
+
+@keyframes widthease {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }

@@ -306,3 +306,246 @@ export const categoriesArr=[{
 },
 ]
 
+
+export const dummyData=
+[{
+  "id": 1,
+  "first_name": "Nike",
+  "last_name": "Oliva",
+  "email": "noliva0@51.la",
+  "gender": "Female",
+  "ip_address": "124.229.36.1",
+  "tab":"game1"
+}, {
+  "id": 2,
+  "first_name": "Gabi",
+  "last_name": "Gideon",
+  "email": "ggideon1@yolasite.com",
+  "gender": "others",
+  "ip_address": "1.151.33.146",
+  "tab":"game2"
+}, {
+  "id": 3,
+  "first_name": "Willetta",
+  "last_name": "Flancinbaum",
+  "email": "wflancinbaum2@reuters.com",
+  "gender": "Female",
+  "ip_address": "49.84.67.18",
+  "tab":"game1"
+}, {
+  "id": 4,
+  "first_name": "Friedrick",
+  "last_name": "Cawse",
+  "email": "fcawse3@php.net",
+  "gender": "Male",
+  "ip_address": "99.190.45.66",
+  "tab":"game2"
+}, {
+  "id": 5,
+  "first_name": "Gilda",
+  "last_name": "Curthoys",
+  "email": "gcurthoys4@seattletimes.com",
+  "gender": "Female",
+  "ip_address": "179.219.59.82",
+  "tab":"game3"
+}, {
+  "id": 6,
+  "first_name": "Melissa",
+  "last_name": "Billingsley",
+  "email": "mbillingsley5@merriam-webster.com",
+  "gender": "others",
+  "ip_address": "149.185.235.12",
+  "tab":"game1"
+}, {
+  "id": 7,
+  "first_name": "Carlin",
+  "last_name": "Ivanikov",
+  "email": "civanikov6@webmd.com",
+  "gender": "Male",
+  "ip_address": "119.210.63.136",
+  "tab":"game3"
+}, {
+  "id": 8,
+  "first_name": "Milicent",
+  "last_name": "Meryett",
+  "email": "mmeryett7@infoseek.co.jp",
+  "gender": "Female",
+  "ip_address": "251.230.121.76",
+  "tab":"game3"
+}, {
+  "id": 9,
+  "first_name": "Guthrie",
+  "last_name": "Gathercole",
+  "email": "ggathercole8@diigo.com",
+  "gender": "Male",
+  "ip_address": "70.179.91.121",
+  "tab":"game2"
+}, {
+  "id": 10,
+  "first_name": "Alvira",
+  "last_name": "Webland",
+  "email": "awebland9@deliciousdays.com",
+  "gender": "Female",
+  "ip_address": "143.89.47.167",
+  "tab":"game1"
+}]
+
+
+export const UserData = [{
+    "id": 1,
+    "first_name": "Linc",
+    "userImage": "https://i.pravatar.cc/150?img=4"
+  }, {
+    "id": 2,
+    "first_name": "Xenos",
+    "userImage": "https://i.pravatar.cc/150?img=3"
+  }, {
+    "id": 3,
+    "first_name": "Meredithe",
+    "userImage": "https://i.pravatar.cc/150?img=2"
+  }, {
+    "id": 4,
+    "first_name": "Clywd",
+    "userImage": "https://i.pravatar.cc/150?img=1"
+  }, {
+    "id": 5,
+    "first_name": "Kliment",
+    "userImage": "https://i.pravatar.cc/150?img=6"
+  }, {
+    "id": 6,
+    "first_name": "Corry",
+    "userImage": "https://i.pravatar.cc/150?img=7"
+  }, {
+    "id": 7,
+    "first_name": "Irvin",
+    "userImage": null
+  }, {
+    "id": 8,
+    "first_name": "Denis",
+    "userImage": "https://i.pravatar.cc/150?img=9"
+  }, {
+    "id": 9,
+    "first_name": "Kalvin",
+    "userImage": "https://i.pravatar.cc/150?img=10"
+  }, {
+    "id": 10,
+    "first_name": "Cristiano",
+    "userImage": "https://i.pravatar.cc/150?img=11"
+  }]
+
+export const TaskStatus = [
+    {
+        "id" : 1,
+        "name" : "TO DO"
+    },
+    {
+        "id" : 2,
+        "name" : "IN PROGRESS"
+    },
+    {
+        "id" : 3,
+        "name" : "CODE REVIEW"
+    },
+    {
+        "id" : 4,
+        "name" : "DONE"
+    },
+    {
+        "id" : 5,
+        "name" : "Depoyled"
+    }
+]
+
+export const TaskType = [
+    {
+        "id" : 1,
+        "type" : "bug"
+    },
+    {
+        "id" : 2,
+        "type" : "task"
+    }
+]
+
+export const TaskData = [
+    {
+        "id" : 1,
+        "statusId" : 1,
+        "title" : "Why do we use it?",
+        "summary" : " ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [6,7],
+        "type" : 1
+    },
+    {
+        "id" : 2,
+        "statusId" : 5,
+        "title" : "Lorem Ipsum is simply dummy text of the printing",
+        "summary" : "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [9,10],
+        "type" : 2
+    },
+    {
+        "id" : 3,
+        "statusId" : 2,
+        "title" : "Where can I get some?",
+        "summary" : "typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [8,1,9],
+        "type" : 1
+    },
+    {
+        "id" : 4,
+        "statusId" : 1,
+        "title" : "Where does it come from?",
+        "summary" : "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an  of type and scrambled it to make a type specimen book",
+        "assignee" : null,
+        "type" : 1
+    },
+    {
+        "id" : 5,
+        "statusId" : 2,
+        "title" : "1914 translation by H. Rackham",
+        "summary" : "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [6,7],
+        "type" : 2
+    },
+    {
+        "id" : 6,
+        "statusId" : 1,
+        "title" : "The standard Lorem Ipsum passage, used since the 1500s",
+        "summary" : "1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [1,2,3,7],
+        "type" : 1
+    },
+    {
+        "id" : 7,
+        "statusId" : 4,
+        "title" : "The standard chunk of Lorem Ipsum used since the 1500s",
+        "summary" : "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [1],
+        "type" : 2
+    },
+    {
+        "id" : 8,
+        "statusId" : 3,
+        "title" : "The standard chunk of Lorem Ipsum ",
+        "summary" : "psum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [2,7],
+        "type" : 1
+    },
+    {
+        "id" : 9,
+        "statusId" : 4,
+        "title" : "The standard chunk ",
+        "summary" : "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "assignee" : [5],
+        "type" : 1
+    },
+    {
+        "id" : 10,
+        "statusId" : 3,
+        "title" : "Lorem Ipsum is simply dummy",
+        "summary" : "Lorem Ipsum is simply dummy",
+        "assignee" : [2,1],
+        "type" : 2
+    }
+]
